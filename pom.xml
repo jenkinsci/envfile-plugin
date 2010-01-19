@@ -12,6 +12,15 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>hpi</packaging>
   <name>Hudson Environment File Plugin</name>
+  <url>http://wiki.hudson-ci.org/display/HUDSON/Envfile+Plugin</url>
+  
+  <developers>
+    <developer>
+      <id>ajoajoajo</id>
+      <name>Anders Johansson</name>
+      <email>ajoajoajo@gmail.com</email>
+    </developer>
+  </developers>
 
   <!-- get every artifact through maven.glassfish.org, which proxies all the artifacts that we need -->
   <repositories>
