@@ -169,6 +169,7 @@ public class EnvFileBuildWrapper extends BuildWrapper{
 		
 		logger.info("Reading environment variables from file. ");
 		
+		
 		this.buildListner = listener;
 		this.build = build;
 		return new EnvironmentImpl();
