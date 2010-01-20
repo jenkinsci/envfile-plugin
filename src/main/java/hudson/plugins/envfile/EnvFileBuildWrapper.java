@@ -92,11 +92,6 @@ public class EnvFileBuildWrapper extends BuildWrapper{
 				console("No path to environment file has been entered.");
 			}
 		}
-		/*catch (InterruptedException e) 
-		{
-			console("Interrupted when resolving file path.");
-			logger.info("Interrupted when resolving file path.");
-		}*/
 		catch (FileNotFoundException e) 
 		{
 			console("Environment file not found. Path to file=[" + path + "]");
@@ -123,6 +118,22 @@ public class EnvFileBuildWrapper extends BuildWrapper{
 			}
 		}
 		return props;
+	}
+	
+	@Override
+	public Environment setUp(AbstractBuild build, Launcher launcher,
+			BuildListener listener) throws IOException, InterruptedException {
+		
+		logger.info("Reading environment variables from file. ");
+		
+		this.buildListner = listener;
+		this.build = build;
+		return new EnvironmentImpl();
+	}
+	
+	private void console(String str)
+	{
+		buildListner.getLogger().println(NAME + str);
 	}
 	
 	class EnvironmentImpl extends Environment
@@ -162,19 +173,6 @@ public class EnvFileBuildWrapper extends BuildWrapper{
 		}
 	}
 	
-	@Override
-	public Environment setUp(AbstractBuild build, Launcher launcher,
-			BuildListener listener) throws IOException, InterruptedException {
-		
-		
-		logger.info("Reading environment variables from file. ");
-		
-		
-		this.buildListner = listener;
-		this.build = build;
-		return new EnvironmentImpl();
-	}
-	
 	@Extension
 	public static final class DescriptorImpl extends BuildWrapperDescriptor
 	{
@@ -187,11 +185,6 @@ public class EnvFileBuildWrapper extends BuildWrapper{
 		public boolean isApplicable(AbstractProject item) {
 			return true;
 		}
-	}
-	
-	private void console(String str)
-	{
-		buildListner.getLogger().println(NAME + str);
 	}
 	
 }
