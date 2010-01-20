@@ -9,7 +9,7 @@
 
   <groupId>org.jvnet.hudson.plugins</groupId>
   <artifactId>envfile</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.9-SNAPSHOT</version>
   <packaging>hpi</packaging>
   <name>Hudson Environment File Plugin</name>
   <url>http://wiki.hudson-ci.org/display/HUDSON/Envfile+Plugin</url>
