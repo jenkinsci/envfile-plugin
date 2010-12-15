@@ -79,12 +79,12 @@ public class EnvFileBuildWrapper extends BuildWrapper{
 
         private Properties readPropsFromFile(String path, Map<String, String> currentMap)
         {
-            console("Reading environment variables from file.");
+            console(Messages.EnvFileBuildWrapper_Console_ReadingFile());
 
             Properties props = new Properties();
             FileInputStream fis = null;
             String resolvedPath = Util.replaceMacro(path, currentMap);
-            console("Path to file: " + resolvedPath);
+            console(Messages.EnvFileBuildWrapper_Console_PathToFile() + ": " + resolvedPath);
 
             try
             {
@@ -95,17 +95,18 @@ public class EnvFileBuildWrapper extends BuildWrapper{
                 }
                 else
                 {
-                    console("No path to environment file has been entered.");
+                    console(Messages.EnvFileBuildWrapper_Console_EmptyPath());
                 }
             }
             catch (FileNotFoundException e)
             {
-                console("Can not find environment file. Path to file=[" + resolvedPath + "]");
+                console(Messages.EnvFileBuildWrapper_Console_FileNotFound() + " " +
+                        Messages.EnvFileBuildWrapper_Console_PathToFile() + "=[" + resolvedPath + "]");
                 logger.warning("Environment file not found. Path to file=[" + resolvedPath + "]");
             }
             catch (IOException e)
             {
-                console("Unable to read from environment file.");
+                console(Messages.EnvFileBuildWrapper_Console_UnableToReadFile());
                 logger.warning("Unable to read from environment file. " + e.getClass().getName());
             }
             finally
@@ -131,7 +132,7 @@ public class EnvFileBuildWrapper extends BuildWrapper{
             }
             catch (Exception e)
             {
-                console("Unable to close environment file.");
+                console(Messages.EnvFileBuildWrapper_Console_UnableToCloseFile());
                 logger.warning("Unable to close environment file.");
             }
         }
