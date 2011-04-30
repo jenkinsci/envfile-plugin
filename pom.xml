@@ -6,12 +6,11 @@
     <version>1.403</version>
   </parent>
 
-  <groupId>org.jvnet.hudson.plugins</groupId>
   <artifactId>envfile</artifactId>
   <version>1.2-SNAPSHOT</version>
   <packaging>hpi</packaging>
-  <name>Hudson Environment File Plugin</name>
-  <url>http://wiki.hudson-ci.org/display/HUDSON/Envfile+Plugin</url>
+  <name>Jenkins Environment File Plugin</name>
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/Envfile+Plugin</url>
   
   <developers>
     <developer>
