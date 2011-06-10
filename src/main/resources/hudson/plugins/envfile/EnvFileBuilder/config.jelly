@@ -1,6 +1,9 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-
 	<f:entry title="${%Title}" help="/plugin/envfile/help-projectConfig.html" description="${%Description}">
-		<f:textbox name="filePath" field="filePath"/>
+		<f:textbox name="filePath" field="filePath"/>		
 	</f:entry>
+	<f:entry help="/plugin/envfile/help-relativeToWorkspace.html">
+		<f:checkbox field="relativeToWorkspace"/>
+    	<label class="attach-previous">${%RelativeToWorkspaceCaption}</label>
+    </f:entry>	
 </j:jelly>
