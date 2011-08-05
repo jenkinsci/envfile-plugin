@@ -34,4 +34,10 @@
       <url>http://maven.glassfish.org/content/groups/public/</url>
     </pluginRepository>
   </pluginRepositories>
+
+  <scm>
+    <connection>scm:git:git://github.com/jenkinsci/envfile-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/envfile-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/envfile-plugin</url>
+  </scm>
 </project>
