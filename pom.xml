@@ -3,41 +3,42 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.403</version>
+    <version>4.53</version>
+    <relativePath />
   </parent>
 
   <artifactId>envfile</artifactId>
-  <version>1.3-SNAPSHOT</version>
+  <version>${changelist}</version>
   <packaging>hpi</packaging>
   <name>Jenkins Environment File Plugin</name>
   <url>https://wiki.jenkins-ci.org/display/JENKINS/Envfile+Plugin</url>
-  
-  <developers>
-    <developer>
-      <id>ajoajoajo</id>
-      <name>Anders Johansson</name>
-      <email>ajoajoajo@gmail.com</email>
-    </developer>
-  </developers>
 
   <!-- get every artifact through maven.glassfish.org, which proxies all the artifacts that we need -->
   <repositories>
     <repository>
       <id>repo.jenkins-ci.org</id>
-      <url>http://repo.jenkins-ci.org/public/</url>
+      <url>https://repo.jenkins-ci.org/public/</url>
     </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
       <id>repo.jenkins-ci.org</id>
-      <url>http://repo.jenkins-ci.org/public/</url>
+      <url>https://repo.jenkins-ci.org/public/</url>
     </pluginRepository>
   </pluginRepositories>
 
   <scm>
-    <connection>scm:git:git://github.com/jenkinsci/envfile-plugin.git</connection>
+    <connection>scm:git:https://github.com/jenkinsci/envfile-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/envfile-plugin.git</developerConnection>
     <url>https://github.com/jenkinsci/envfile-plugin</url>
+    <tag>${scmTag}</tag>
   </scm>
+
+  <properties>
+    <changelist>999999-SNAPSHOT</changelist>
+    <jenkins.version>2.361.4</jenkins.version>
+    <!-- TODO fix violations -->
+    <spotbugs.threshold>High</spotbugs.threshold>
+  </properties>
 </project>
